@@ -387,7 +387,129 @@ combo_dev_attr_t MIPI_4lane_CHN0_SENSOR_IMX334_12BIT_8M_NOWDR_ATTR =
         }
     }
 };
+// 增加 4 lane lvds 配置
+combo_dev_attr_t LVDS_4lane_CHN0_SENSOR_IMX334_12BIT_8M_NOWDR_ATTR =
+{
+    .devno                  = 0,
+    .input_mode             = INPUT_MODE_LVDS,
+    .data_rate              = MIPI_DATA_RATE_X1,
+    .img_rect               = {0, 0, 3840, 2160},
+    {
+        .lvds_attr          =
+        {
+            .input_data_type        = DATA_TYPE_RAW_10BIT,
+            .wdr_mode               = HI_WDR_MODE_NONE,
+            .sync_mode              = LVDS_SYNC_MODE_SAV,
+            .vsync_attr             = {LVDS_VSYNC_NORMAL, 0, 0},
+            .fid_attr               = {LVDS_FID_NONE, HI_TRUE},
+            .data_endian            = LVDS_ENDIAN_LITTLE,
+            .sync_code_endian       = LVDS_ENDIAN_LITTLE,
+            .lane_id                = {0, 1, 2, 3, -1, -1, -1, -1, 8, 9, 10, 11, 12, 13, 14, 15},
+            .sync_code              = 
+            {
+                 /* each vc has 4 params, sync_code[i]:
+                   sync_mode is SYNC_MODE_SOF: SOF, EOF, SOL, EOL
+                   sync_mode is SYNC_MODE_SAV: invalid sav, invalid eav, valid sav, valid eav  */
+                 {   
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
 
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+
+                {   {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0},
+                    {0xab0, 0xb60, 0x800, 0x9d0}
+                },
+            }
+        }
+    }
+};
 combo_dev_attr_t MIPI_4lane_CHN2_SENSOR_IMX334_12BIT_8M_NOWDR_ATTR =
 {
     .devno = 2,
@@ -923,6 +1045,46 @@ VI_DEV_ATTR_S DEV_ATTR_IMX334_8M_BASE =
     DATA_RATE_X1
 };
 
+// 输入为 LVDS 时，配置 VI DEV
+VI_DEV_ATTR_S LVDS_DEV_ATTR_IMX334_8M_BASE =
+{
+    VI_MODE_LVDS,
+    VI_WORK_MODE_1Multiplex,
+    {0xFFF00000,    0x0},
+    VI_SCAN_PROGRESSIVE,
+    {-1, -1, -1, -1},
+    VI_DATA_SEQ_YUYV,
+
+    {
+    /*port_vsync   port_vsync_neg     port_hsync        port_hsync_neg        */
+    VI_VSYNC_PULSE, VI_VSYNC_NEG_LOW, VI_HSYNC_VALID_SINGNAL,VI_HSYNC_NEG_HIGH,VI_VSYNC_VALID_SINGAL,VI_VSYNC_VALID_NEG_HIGH,
+
+    /*hsync_hfb    hsync_act    hsync_hhb*/
+    {0,            1280,        0,
+    /*vsync0_vhb vsync0_act vsync0_hhb*/
+     0,            720,        0,
+    /*vsync1_vhb vsync1_act vsync1_hhb*/
+     0,            0,            0}
+    },
+    VI_DATA_TYPE_RGB,
+    HI_FALSE,
+    {3840 , 2160},
+    {
+        {
+            {3840 , 2160},
+        },
+        {
+            VI_REPHASE_MODE_NONE,
+            VI_REPHASE_MODE_NONE
+        }
+    },
+    {
+        WDR_MODE_NONE,
+        2160
+    },
+    DATA_RATE_X1
+};
+
 VI_DEV_ATTR_S DEV_ATTR_SHARP8K_SLVDS_8K_BASE =
 {
     VI_MODE_LVDS,
@@ -1157,6 +1319,26 @@ VI_PIPE_ATTR_S PIPE_ATTR_3840x2160_RAW12_420_3DNR_RFR =
         DATA_BITWIDTH_10,
         VI_NR_REF_FROM_RFR,
         COMPRESS_MODE_NONE
+    },
+    HI_FALSE,
+    { -1, -1}
+};
+
+// 输入为 LVDS 时，配置 VI PIPE
+VI_PIPE_ATTR_S LVDS_PIPE_ATTR_3840x2160_RAW10_420_3DNR_RFR =
+{
+    VI_PIPE_BYPASS_NONE, HI_FALSE,HI_FALSE,
+    3840, 2160,
+    PIXEL_FORMAT_RGB_BAYER_10BPP,
+    COMPRESS_MODE_LINE,
+    DATA_BITWIDTH_10,
+    HI_TRUE,
+    {
+        PIXEL_FORMAT_YVU_SEMIPLANAR_420,
+        DATA_BITWIDTH_10,
+        VI_NR_REF_FROM_RFR,
+        COMPRESS_MODE_NONE
+
     },
     HI_FALSE,
     { -1, -1}
@@ -1903,7 +2085,9 @@ HI_S32 SAMPLE_COMM_VI_GetComboAttrBySns(SAMPLE_SNS_TYPE_E enSnsType, combo_dev_t
 	case SONY_IMX334_MIPI_8M_30FPS_12BIT:
 	        if (0 == MipiDev)
             {
-                memcpy_s(pstComboAttr, sizeof(combo_dev_attr_t), &MIPI_4lane_CHN0_SENSOR_IMX334_12BIT_8M_NOWDR_ATTR, sizeof(combo_dev_attr_t));
+                // memcpy_s(pstComboAttr, sizeof(combo_dev_attr_t), &MIPI_4lane_CHN0_SENSOR_IMX334_12BIT_8M_NOWDR_ATTR, sizeof(combo_dev_attr_t));
+                // LVDS 输入配置
+                memcpy_s(pstComboAttr, sizeof(combo_dev_attr_t), &LVDS_4lane_CHN0_SENSOR_IMX334_12BIT_8M_NOWDR_ATTR, sizeof(combo_dev_attr_t));
             }
             else if (2 == MipiDev)
             {
@@ -2040,7 +2224,8 @@ HI_U32 SAMPLE_COMM_VI_GetMipiLaneDivideMode(SAMPLE_VI_CONFIG_S* pstViConfig)
     }
     else
     {
-        lane_divide_mode = LANE_DIVIDE_MODE_7;
+        lane_divide_mode = LANE_DIVIDE_MODE_7;  // 4 lane
+        // lane_divide_mode = LANE_DIVIDE_MODE_B;   // 2 lane
     }
 
     return (HI_U32)lane_divide_mode;
@@ -2061,7 +2246,7 @@ HI_S32 SAMPLE_COMM_VI_StartMIPI(SAMPLE_VI_CONFIG_S* pstViConfig)
     }
 
     lane_divide_mode = SAMPLE_COMM_VI_GetMipiLaneDivideMode(pstViConfig);
-
+    // 修改 lane 分布模式
     s32Ret = SAMPLE_COMM_VI_SetMipiHsMode(lane_divide_mode);
 
     if (HI_SUCCESS != s32Ret)
@@ -2104,7 +2289,7 @@ HI_S32 SAMPLE_COMM_VI_StartMIPI(SAMPLE_VI_CONFIG_S* pstViConfig)
 
         return HI_FAILURE;
     }
-
+    // 设置 MIPI 属性
     s32Ret = SAMPLE_COMM_VI_SetMipiAttr(pstViConfig);
 
     if (HI_SUCCESS != s32Ret)
@@ -2276,7 +2461,9 @@ HI_S32 SAMPLE_COMM_VI_GetDevAttrBySns(SAMPLE_SNS_TYPE_E enSnsType, VI_DEV_ATTR_S
 
         case SONY_IMX334_SLAVE_MIPI_8M_30FPS_12BIT:
         case SONY_IMX334_MIPI_8M_30FPS_12BIT:
-            memcpy_s(pstViDevAttr, sizeof(VI_DEV_ATTR_S), &DEV_ATTR_IMX334_8M_BASE, sizeof(VI_DEV_ATTR_S));
+            // memcpy_s(pstViDevAttr, sizeof(VI_DEV_ATTR_S), &DEV_ATTR_IMX334_8M_BASE, sizeof(VI_DEV_ATTR_S));
+            // 输入为 LVDS 时，VI DEV 配置
+            memcpy_s(pstViDevAttr, sizeof(VI_DEV_ATTR_S), &LVDS_DEV_ATTR_IMX334_8M_BASE, sizeof(VI_DEV_ATTR_S));
             break;
 
         case COMSIS_SHARP8K_SLVDS_8K_30FPS_12BIT:
@@ -2340,7 +2527,10 @@ HI_S32 SAMPLE_COMM_VI_GetPipeAttrBySns(SAMPLE_SNS_TYPE_E enSnsType, VI_PIPE_ATTR
 
         case SONY_IMX334_SLAVE_MIPI_8M_30FPS_12BIT:
         case SONY_IMX334_MIPI_8M_30FPS_12BIT:
-            memcpy_s(pstPipeAttr, sizeof(VI_PIPE_ATTR_S), &PIPE_ATTR_3840x2160_RAW12_420_3DNR_RFR, sizeof(VI_PIPE_ATTR_S));
+            // memcpy_s(pstPipeAttr, sizeof(VI_PIPE_ATTR_S), &PIPE_ATTR_3840x2160_RAW12_420_3DNR_RFR, sizeof(VI_PIPE_ATTR_S));
+            // 输入为 LVDS 时，配置 VI PIPE
+            memcpy_s(pstPipeAttr, sizeof(VI_PIPE_ATTR_S), &LVDS_PIPE_ATTR_3840x2160_RAW10_420_3DNR_RFR, sizeof(VI_PIPE_ATTR_S));
+  
             break;
 
         case COMSIS_SHARP8K_SLVDS_8K_30FPS_12BIT:
@@ -3571,6 +3761,7 @@ HI_S32 SAMPLE_COMM_VI_StartVi(SAMPLE_VI_CONFIG_S* pstViConfig)
         return HI_FAILURE;
     }
 
+    /*
     s32Ret = SAMPLE_COMM_VI_CreateIsp(pstViConfig);
 
     if (s32Ret != HI_SUCCESS)
@@ -3579,7 +3770,7 @@ HI_S32 SAMPLE_COMM_VI_StartVi(SAMPLE_VI_CONFIG_S* pstViConfig)
         SAMPLE_PRT("SAMPLE_COMM_VI_CreateIsp failed!\n");
         return HI_FAILURE;
     }
-
+    */
     return s32Ret;
 }
 

@@ -137,8 +137,8 @@ HI_S32 SAMPLE_VIO_8K30_PARALLEL(VO_INTF_TYPE_E enVoIntfType)
     step 1:  Get all sensors information, need one vi
         ,and need one mipi --
     *************************************************/
-    SAMPLE_COMM_VI_GetSensorInfo(&stViConfig);
     stViConfig.s32WorkingViNum                           = s32ViCnt;
+    SAMPLE_COMM_VI_GetSensorInfo(&stViConfig);
 
     stViConfig.as32WorkingViId[0]                        = 0;
     stViConfig.astViInfo[0].stSnsInfo.MipiDev            = SAMPLE_COMM_VI_GetComboDevBySensor(stViConfig.astViInfo[0].stSnsInfo.enSnsType, 0);
